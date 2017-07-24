@@ -1,2 +1,2 @@
-# react-redux-decorator
+# store-decorator
 decorator for react-redux
