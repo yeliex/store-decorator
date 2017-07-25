@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const htmlWebpackPlugin = require('html-webpack-plugin');
 const config = require('./webpack.config');
 
 const _ = {
