@@ -35,5 +35,5 @@ npm-debug.log*
 out
 .vscode
 dist
-es
-lib
+/es
+/lib
