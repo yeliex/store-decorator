@@ -1,6 +1,6 @@
 {
   "name": "store-decorator",
-  "version": "1.0.0-alpha1",
+  "version": "1.0.0-alpha2",
   "description": "decorator for fetch",
   "main": "dist/index.js",
   "module": "lib/index.js",
