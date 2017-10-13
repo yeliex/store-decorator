@@ -8,6 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config scripts/webpack/webpack.config.development.js --color --progress",
+    "prebuild": "npm run clean",
     "build": "npm run build:umd && npm run build:es && npm run build:cjs",
     "build:umd": "webpack --config scripts/webpack/webpack.config.production.js --color --progress",
     "build:es": "cross-env BABEL_ENV=es babel src -d ./es ",
