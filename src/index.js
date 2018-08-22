@@ -42,10 +42,24 @@ export const combine = (configs) => {
   });
 };
 
-export const create = (reducers = {}, preloadedState, enhancer) => {
+export const create = (reducers, preloadedState, enhancer) => {
   if (flags.inited) {
     return flags.Store;
   }
+
+  if (!enhancer) {
+    if (!preloadedState) {
+      enhancer = reducers;
+      reducers = undefined;
+      preloadedState = {};
+    } else {
+      enhancer = preloadedState;
+      preloadedState = reducers;
+      reducers = undefined;
+    }
+  }
+
+  const combined = typeof reducers === 'function' ? reducers(combineReducers(Actions)) : combineReducers({ ...Actions, ...reducers });
 
   const store = createStore(combineReducers({ ...Actions, ...reducers }), preloadedState, enhancer);
 
@@ -53,7 +67,7 @@ export const create = (reducers = {}, preloadedState, enhancer) => {
     total[namespace] = {
       configurable: false,
       enumerable: false,
-      value: Store[namespace]
+      value: Store[namespace],
     };
     return total;
   }, {}));
