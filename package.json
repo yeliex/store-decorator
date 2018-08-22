@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "lib/index.js",
   "jsnext:main": "es/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config scripts/webpack/webpack.config.development.js --color --progress",
@@ -40,6 +41,7 @@
     "dist",
     "es",
     "lib",
+    "index.d.ts",
     "README.md",
     "package.json",
     "yarn.lock",
