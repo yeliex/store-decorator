@@ -61,7 +61,7 @@ export const create = (reducers, preloadedState, enhancer) => {
 
   const combined = typeof reducers === 'function' ? reducers(combineReducers(Actions)) : combineReducers({ ...Actions, ...reducers });
 
-  const store = createStore(combineReducers({ ...Actions, ...reducers }), preloadedState, enhancer);
+  const store = createStore(combined, preloadedState, enhancer);
 
   Object.defineProperties(store, Object.keys(Store).reduce((total, namespace) => {
     total[namespace] = {
