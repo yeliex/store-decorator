@@ -1,4 +1,4 @@
-import { Store, Reducer, StoreEnhancer } from 'redux';
+import { Store, Reducer, StoreEnhancer, ReducersMapObject } from 'redux';
 
 export default function getStore(): Store;
 
@@ -9,10 +9,10 @@ type Effect = (payload: any) => void
 export interface Model<S> {
     namespace: string;
     state: S,
-    actions: {
+    actions?: {
         [key: string]: Action<S>
     },
-    effects: {
+    effects?: {
         [key: string]: Effect
     }
 }
@@ -25,7 +25,7 @@ interface InitialState {
     [key: string]: any
 }
 
-type ReducerEnhancer = (reducer: Reducer) => Reducer;
+type ReducerEnhancer = ((reducer: Reducer) => Reducer) | ReducersMapObject;
 
 export function combine(models: Models): void;
 
