@@ -55,8 +55,8 @@
     "lodash.camelcase": "^4.3.0",
     "lodash.snakecase": "^4.1.1",
     "lodash.uniq": "^4.5.0",
-    "react-redux": "^5.0.5",
-    "redux": "^3.7.2",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
     "redux-actions": "^2.2.1"
   },
   "devDependencies": {
@@ -74,7 +74,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
