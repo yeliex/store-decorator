@@ -25,7 +25,10 @@ interface InitialState {
     [key: string]: any
 }
 
-type ReducerEnhancer = ((reducer: Reducer) => Reducer) | ReducersMapObject;
+
+type ReducerEnhancer = ((reducer: Reducer) => Reducer) | {
+    [key: string]: Reducer
+};
 
 export function combine(models: Models): void;
 
